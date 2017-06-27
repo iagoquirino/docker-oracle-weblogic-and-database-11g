@@ -1,0 +1,24 @@
+# username: system
+# password: oracle
+# Password for SYS & SYSTEM: oracle
+database:
+  image: sath89/oracle-xe-11g
+  volumes:
+    - ./persistent_data/oradata:/u01/app/oracle # persistent oracle database data.
+  ports:
+    - 1521:1521
+    - 8080:18080
+
+# weblogic information
+# console: <docker-ip>:7001/console
+# username: weblogic
+# password: weblogic
+weblogic:
+  image: danjng/wls1036-adminserver
+  ports:
+    - "7001:7001"
+  command: 
+    - "weblogic"
+    - "weblogic"
+  links:
+    - database

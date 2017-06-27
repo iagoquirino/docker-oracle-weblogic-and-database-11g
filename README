@@ -1,0 +1,3 @@
+docker-oracle-weblogic-and-database-11g
+
+A docker compose setup for Oracle's weblogic AND database(XE) version 11g.
